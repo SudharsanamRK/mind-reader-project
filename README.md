@@ -247,17 +247,6 @@ This project demonstrates:
 
 ---
 
-## 📂 Project Structure
-/mind-reader
-├── index.html
-├── assets/
-│ ├── money-fall.gif
-│ ├── mind-reader-bg.png
-│ └── preview.png (optional screenshot)
-├── README.md
-
----
-
 ## 🚀 How to Run
 
 1. Clone or download the repository  
@@ -269,7 +258,7 @@ This project demonstrates:
 
 ## Output
 
-![Mind Reader Demo](assets/mind-reader-output.gif)
+![Mind Reader Demo](mind-reader-output.gif)
 
 > This GIF shows the complete user experience with loading, reveal animation, sound, and mind-reading illusion.
 
