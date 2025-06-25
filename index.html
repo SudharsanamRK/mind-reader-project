@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mind Reader</title>
+  <style>
+    body {
+      background: url('mind-reader-bg.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 4rem;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    input {
+      padding: 20px;
+      font-size: 1.2rem;
+      width: 200px;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    button {
+      padding: 20px 30px;
+      font-size: 1rem;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c2185b;
+    }
+
+    .loading-message {
+      font-size: 2rem;
+      margin-top: 20px;
+      min-height: 30px;
+      text-align: center;
+    }
+
+    .progress-container {
+      width: 400px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 3px solid #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 15px;
+      display: none;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background-image: repeating-linear-gradient(
+        to right,
+        #05fb2e,
+        #05fb2e 20px,
+        #000 20px,
+        #000 25px
+      );
+      transition: width 0.3s ease;
+    }
+
+    .reveal {
+      margin-top: 30px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #e0992e;
+      min-height: 2.5rem;
+      white-space: pre-wrap;
+      text-align: center;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    /* 💸 Money Fall GIF */
+    #moneyEffect {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 999;
+      display: none;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Pick any number you want, I will read your mind</h1>
+
+  <input type="number" id="numberInput" placeholder="Enter your number" />
+  <button onclick="readMind()">Read My Mind</button>
+
+  <div class="loading-message" id="loadingMsg"></div>
+  <div class="progress-container" id="progressContainer">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <div class="reveal" id="revealText"></div>
+
+  <!-- 💸 Falling Money GIF -->
+  <img src="money-fall.gif" alt="Money Fall" id="moneyEffect" />
+
+  <!-- 🔊 Ding Sound -->
+  <audio id="dingSound" src="https://www.soundjay.com/button/sounds/button-3.mp3" preload="auto"></audio>
+
+  <script>
+    function readMind() {
+      const number = document.getElementById('numberInput').value.trim();
+      const progressBar = document.getElementById('progressBar');
+      const progressContainer = document.getElementById('progressContainer');
+      const loadingMsg = document.getElementById('loadingMsg');
+      const reveal = document.getElementById('revealText');
+      const sound = document.getElementById('dingSound');
+      const money = document.getElementById('moneyEffect');
+
+      if (!number) {
+        reveal.textContent = "Please enter a number!";
+        return;
+      }
+
+      // Reset
+      reveal.textContent = "";
+      progressBar.style.width = "0%";
+      progressContainer.style.display = "block";
+      loadingMsg.textContent = "Starting...";
+      money.style.display = "none";
+
+      let progress = 0;
+
+      const messages = [
+        { percent: 25, text: "Reading your mind..." },
+        { percent: 50, text: "Analysing brain pattern..." },
+        { percent: 60, text: "Connecting your brain via Bluetooth..." },
+        { percent: 80, text: "Calculating 6.37E+893127845151387513 POSSIBLE COMBINATIONS..." },
+        { percent: 99, text: "Almost there... hang tight 🧠⚡" }
+      ];
+
+      const interval = setInterval(() => {
+        progress += 1;
+        progressBar.style.width = progress + "%";
+
+        const msg = messages.find(m => m.percent === progress);
+        if (msg) loadingMsg.textContent = msg.text;
+
+        if (progress >= 99) {
+          clearInterval(interval);
+          setTimeout(() => {
+            progressBar.style.width = "100%";
+            progressContainer.style.display = "none";
+            loadingMsg.textContent = "";
+
+            const message = `You were thinking of ${number} 🤯`;
+            let i = 0;
+            function typeChar() {
+              if (i < message.length) {
+                reveal.textContent += message.charAt(i);
+                i++;
+                setTimeout(typeChar, 60);
+              } else {
+                sound.play();
+                // 💸 Show money GIF
+                money.style.display = "block";
+                setTimeout(() => {
+                  money.style.display = "none";
+                }, 2000);
+              }
+            }
+            typeChar();
+          }, 1500);
+        }
+      }, 100); // ~10s total
+    }
+  </script>
+
+</body>
+</html>
