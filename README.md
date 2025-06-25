@@ -258,10 +258,11 @@ This project demonstrates:
 
 ## Output
 
-![Mind Reader Demo](mind-reader-output.gif)
+### 📽️ Demo Preview
 
-> This GIF shows the complete user experience with loading, reveal animation, sound, and mind-reading illusion.
+![Mind Reader Demo](assets/mind-reader-output.gif)
 
+> This GIF demonstrates the full experience: loading, reveal, sound, and falling money effect.
 
 ---
 
