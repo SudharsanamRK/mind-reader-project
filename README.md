@@ -1,23 +1,21 @@
-# 🧠 Mind Reader 
+# Mind Reader 
 
 > A fun frontend project that creates the illusion of mind-reading using simple web technologies.
 
-## 📖 Description
+## Description
 
 This is an interactive web-based application that simulates a playful *mind-reading experience* using pure HTML, CSS, and JavaScript. The user is asked to think of a number and enter it into the interface. Once they click the **"Read My Mind"** button, the system begins a humorous and dramatic loading sequence.
 
-The progress bar updates with quirky messages, and after a short delay, the exact number the user entered is revealed with a **typing animation**, **sound effect**, and a **visual animation** (such as falling money). While no real magic is involved, the carefully timed interaction gives the illusion of mental telepathy.
-
 ---
 
-## ✨ Features
+## Features
 
-- 📊 Dynamic loading bar with staged mind-reading messages  
-- ⌨️ Typing effect text reveal  
-- 🔊 Audio cue to enhance the reveal  
-- 💸 Animated GIF (money fall) triggered at the end  
-- 🎨 Custom background and visual styling  
-- ✅ Fully responsive and lightweight (no frameworks used)
+-  Dynamic loading bar with staged mind-reading messages  
+-  Typing effect text reveal  
+-  Audio cue to enhance the reveal  
+-  Animated GIF (money fall) triggered at the end  
+-  Custom background and visual styling  
+-  Fully responsive and lightweight (no frameworks used)
 
 ---
 
@@ -227,7 +225,7 @@ The progress bar updates with quirky messages, and after a short delay, the exac
 ```
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **HTML5** – Structural markup  
 - **CSS3** – Styling and animations (including `@keyframes`)  
@@ -236,7 +234,7 @@ The progress bar updates with quirky messages, and after a short delay, the exac
 
 ---
 
-## 📚 Learning Outcomes
+## Learning Outcomes
 
 This project demonstrates:
 - Event-driven JavaScript interaction
@@ -247,7 +245,7 @@ This project demonstrates:
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 1. Clone or download the repository  
 2. Ensure the image and GIF files are in the correct folder (`assets/`)  
@@ -258,7 +256,7 @@ This project demonstrates:
 
 ## Output
 
-### 📽️ Demo Preview
+### Demo Preview
 
 ![Mind Reader Demo](assets/mind-reader-output.gif)
 
@@ -266,7 +264,7 @@ This project demonstrates:
 
 ---
 
-## 🧪 Use Cases
+## Use Cases
 
 - Interactive UI demo for web portfolios  
 - Mini-project for JavaScript learners  
@@ -275,14 +273,6 @@ This project demonstrates:
 
 ---
 
-## 🪪 License
+## License
 
 This project is open-source and available under the **MIT License**.  
-Feel free to reuse, remix, or enhance it!
-
----
-
-## 🙌 Acknowledgements
-
-- Sound effect by [SoundJay](https://www.soundjay.com/)
-- Background and GIF assets created or sourced under free use license
