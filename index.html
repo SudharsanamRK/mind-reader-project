@@ -5,7 +5,7 @@
   <title>Mind Reader</title>
   <style>
     body {
-      background: url('mind-reader-bg.png') no-repeat center center fixed;
+      background: url('assets/mind-reader-bg.png') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
       font-family: 'Segoe UI', sans-serif;
@@ -22,32 +22,40 @@
       font-size: 4rem;
       text-align: center;
       margin-bottom: 30px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      color: #fffb70; /* Neon Yellow */
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
     }
 
     input {
       padding: 20px;
       font-size: 1.2rem;
-      width: 200px;
+      width: 220px;
       border: none;
       border-radius: 10px;
       margin-bottom: 15px;
       text-align: center;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      outline: none;
+    }
+
+    input::placeholder {
+      color: #ddd;
     }
 
     button {
       padding: 20px 30px;
       font-size: 1rem;
-      background-color: #e91e63;
-      color: white;
-      border: none;
+      background-color: #ff4081; /* Vibrant Pink */
+      color: #fff;
+      border: 2px solid #ff79a9;
       border-radius: 10px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     button:hover {
-      background-color: #c2185b;
+      background-color: #e040fb; /* Purple-Pink */
     }
 
     .loading-message {
@@ -55,12 +63,14 @@
       margin-top: 20px;
       min-height: 30px;
       text-align: center;
+      color: #00ffea; /* Neon Cyan */
+      text-shadow: 1px 1px 6px #00ffea;
     }
 
     .progress-container {
       width: 400px;
       height: 40px;
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.1);
       border: 3px solid #fff;
       border-radius: 8px;
       overflow: hidden;
@@ -73,8 +83,8 @@
       width: 0%;
       background-image: repeating-linear-gradient(
         to right,
-        #05fb2e,
-        #05fb2e 20px,
+        #1aff00,
+        #1aff00 20px,
         #000 20px,
         #000 25px
       );
@@ -85,11 +95,11 @@
       margin-top: 30px;
       font-size: 2rem;
       font-weight: bold;
-      color: #e0992e;
+      color: #fffa7c; /* Golden Yellow */
       min-height: 2.5rem;
       white-space: pre-wrap;
       text-align: center;
-      text-shadow: 2px 2px 4px #000;
+      text-shadow: 2px 2px 5px #000;
     }
 
     /* 💸 Money Fall GIF */
@@ -122,7 +132,7 @@
   <div class="reveal" id="revealText"></div>
 
   <!-- 💸 Falling Money GIF -->
-  <img src="money-fall.gif" alt="Money Fall" id="moneyEffect" />
+  <img src="assets/money-fall.gif" alt="Money Fall" id="moneyEffect" />
 
   <!-- 🔊 Ding Sound -->
   <audio id="dingSound" src="https://www.soundjay.com/button/sounds/button-3.mp3" preload="auto"></audio>
